@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="BarManager.Views.LogInView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BarManager.Views"
+             xmlns:ctx="clr-namespace:BarManager.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/drimk1.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1"
+               Grid.Row="0" 
+               Content="Nume utilizator"
+               VerticalContentAlignment="Bottom"
+               HorizontalContentAlignment="Center"
+               FontFamily="Arial Black" Foreground="White">
+        </Label>
+        <TextBox x:Name="numeUtilizator" 
+                 Grid.Column="1"
+                 Grid.Row="1"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                 Height="25"
+                 Width="200"
+                 Text="{Binding UserName}"
+                 >
+        </TextBox>
+        <Label Content="Parola"
+               Grid.Row="1"
+               Grid.Column="1"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center" FontFamily="Arial Black" Foreground="White"
+               >
+
+        </Label>
+        <TextBox x:Name="parola" 
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                 Height="25"
+                 Width="200"
+                 Text="{Binding Password}"
+                 >
+        </TextBox>
+        <Button Grid.Column="1"
+                Grid.Row="2"
+                Height="25"
+                Width="50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom">
+            <Button x:Name="LogIn"  
+            Content="Log In" 
+            Command="{Binding LogInButtonCommand}" />
+        </Button>
+
+
+    </Grid>
+</UserControl>
